@@ -14,7 +14,7 @@ export default function TechStackBadge({ tech }: TechStackBadgeProps) {
       variant="default"
       className="text-xs"
       iconSrc={Icon}
-      iconClassName={`${Icon?.includes('next') || Icon?.includes('fast') ? 'dark:invert' : ''}`}
+      iconClassName={`${Icon?.includes('next') || Icon?.includes('fast') || Icon?.includes('prisma') ? 'dark:invert' : ''}`}
     >
       {tech}
     </IconBadge>

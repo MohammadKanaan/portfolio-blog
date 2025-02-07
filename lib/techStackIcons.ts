@@ -15,4 +15,5 @@ export const techStackIcons: Record<string, string> = {
   PostgreSQL: '/static/icons/postgresql.svg',
   MongoDB: '/static/icons/mongodb.svg',
   NodeJS: '/static/icons/nodejs.svg',
+  Prisma: '/static/icons/prisma.svg',
 }

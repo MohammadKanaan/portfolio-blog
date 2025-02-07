@@ -1,12 +1,15 @@
-import siteMetadata from '@/data/siteMetadata'
+'use client'
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
+import siteMetadata from '@/data/siteMetadata'
 import Link from './Link'
 import MobileNav from './MobileNav'
-import ThemeSwitch from './ThemeSwitch'
 import SearchButton from './SearchButton'
+import ThemeSwitch from './ThemeSwitch'
+import { usePathname } from 'next/navigation'
+import { cn } from 'lib/utils'
 
 const Header = () => {
+  const pathname = usePathname()
   let headerClass =
     'flex items-center w-full bg-gray-300 dark:bg-gray-950 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 dark:bg-opacity-30 justify-center rounded-xl p-4 m-2'
   if (siteMetadata.stickyNav) {
@@ -23,7 +26,12 @@ const Header = () => {
               <Link
                 key={link.title}
                 href={link.href}
-                className="underline-effect m-1 block font-medium text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+                className={cn(
+                  'm-1 block font-medium text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400',
+                  pathname === link.href
+                    ? 'underline-effect-perm text-primary-500 dark:text-primary-400'
+                    : 'underline-effect'
+                )}
               >
                 {link.title}
               </Link>
