@@ -9,7 +9,7 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import tagData from 'app/tag-data.json'
-import { ScrollArea } from '@/components/components/ui/scroll-area'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 interface PaginationProps {
   totalPages: number
