@@ -34,7 +34,7 @@ export default function ProjectCard({ title, description, imgSrc, href, techStac
         <div className="p-6">
           <h2 className="mb-3 text-2xl font-bold leading-8 tracking-tight">
             {href ? (
-              <Link href={href} aria-label={`Link to ${title}`}>
+              <Link href={href} aria-label={`Link to ${title}`} className="hover: underline-effect">
                 {title}
               </Link>
             ) : (
@@ -48,7 +48,7 @@ export default function ProjectCard({ title, description, imgSrc, href, techStac
           {href && (
             <Link
               href={href}
-              className="text-base font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              className="underline-effect text-base font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
               aria-label={`Link to ${title}`}
             >
               Learn more &rarr;

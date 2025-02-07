@@ -11,7 +11,7 @@ export default function SkillsSection() {
   }
   return (
     <div className="space-y-3">
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row items-baseline justify-between">
         <h3 className="text-2xl font-bold">Skills</h3>
         <DownloadResumeButton />
       </div>

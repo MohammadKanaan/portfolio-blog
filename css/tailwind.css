@@ -98,3 +98,13 @@ input:-webkit-autofill:focus {
   display: inline-block;
   vertical-align: middle;
 }
+
+@layer components {
+  .underline-effect {
+    @apply relative p-0;
+  }
+
+  .underline-effect::after {
+    @apply absolute bottom-[-4px] left-0 h-1 w-full origin-bottom-right scale-x-0 bg-primary-400 transition-transform duration-300 content-[''] hover:origin-bottom-left hover:scale-x-100;
+  }
+}
