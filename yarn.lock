@@ -6965,6 +6965,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"holy-loader@npm:^2.3.13":
+  version: 2.3.13
+  resolution: "holy-loader@npm:2.3.13"
+  peerDependencies:
+    react: ">= 16.0.0"
+  checksum: 71f9928946cb3853ffaf54ccd8b9b892a8d5608bee7bcff706308027284ae4cf93ba0a60ec41178abf80c26146e2582b43aa4a7db673c5fc579310d589996541
+  languageName: node
+  linkType: hard
+
 "html-enumerated-attributes@npm:^1.0.0":
   version: 1.1.1
   resolution: "html-enumerated-attributes@npm:1.1.1"
@@ -11609,6 +11618,7 @@ __metadata:
     globals: ^15.12.0
     gray-matter: ^4.0.2
     hast-util-from-html-isomorphic: ^2.0.0
+    holy-loader: ^2.3.13
     husky: ^9.0.0
     image-size: 1.0.0
     lint-staged: ^13.0.0

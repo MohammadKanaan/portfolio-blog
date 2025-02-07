@@ -11,6 +11,8 @@ import Footer from '@/components/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
 import { Metadata } from 'next'
+import HolyLoader from 'holy-loader'
+import colors from 'tailwindcss/colors'
 
 const space_grotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -99,6 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
             <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
+              <HolyLoader easing="linear" showSpinner color="#10B981" speed={250} />
               <Header />
               <main className="mb-auto">{children}</main>
             </SearchProvider>

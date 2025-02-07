@@ -8,14 +8,14 @@ import SearchButton from './SearchButton'
 
 const Header = () => {
   let headerClass =
-    'flex items-center w-full bg-gray-300 dark:bg-gray-950 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 dark:bg-opacity-30 justify-between rounded-lg p-4'
+    'flex items-center w-full bg-gray-300 dark:bg-gray-950 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-40 dark:bg-opacity-30 justify-center rounded-xl p-4 m-2'
   if (siteMetadata.stickyNav) {
     headerClass += ' sticky top-4 z-50'
   }
 
   return (
     <header className={headerClass}>
-      <Link href="/" aria-label={siteMetadata.headerTitle}>
+      {/* <Link href="/" aria-label={siteMetadata.headerTitle}>
         <div className="flex items-center justify-between">
           <div className="mr-3">
             <Logo />
@@ -26,9 +26,9 @@ const Header = () => {
             </div>
           ) : (
             siteMetadata.headerTitle
-          )}
+          )}  
         </div>
-      </Link>
+      </Link> */}
       <div className="flex items-center space-x-4 leading-5 sm:space-x-6">
         <div className="no-scrollbar hidden max-w-40 items-center space-x-4 overflow-x-auto pr-2 sm:flex sm:space-x-6 md:max-w-72 lg:max-w-96">
           {headerNavLinks
