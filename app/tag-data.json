@@ -1,10 +1,12 @@
 {
+  "code": 3,
+  "pocketbase": 1,
+  "react-native": 1,
   "next-js": 6,
   "tailwind": 3,
   "guide": 5,
   "feature": 2,
   "markdown": 2,
-  "code": 2,
   "laravel": 1,
   "multi-author": 1,
   "hello": 1,

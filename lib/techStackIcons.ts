@@ -1,5 +1,5 @@
 export const techStackIcons: Record<string, string> = {
-  'Next.js': '/static/icons/nextjs.svg',
+  NextJS: '/static/icons/nextjs.svg',
   React: '/static/icons/react.svg',
   'React Native': '/static/icons/react.svg',
   TypeScript: '/static/icons/typescript.svg',
@@ -9,4 +9,10 @@ export const techStackIcons: Record<string, string> = {
   Pocketbase: '/static/icons/pocketbase.png',
   Laravel: '/static/icons/laravel.svg',
   FastAPI: '/static/icons/fastapi.svg',
+  Firebase: '/static/icons/firebase.svg',
+  Docker: '/static/icons/docker.svg',
+  Git: '/static/icons/git.svg',
+  PostgreSQL: '/static/icons/postgresql.svg',
+  MongoDB: '/static/icons/mongodb.svg',
+  NodeJS: '/static/icons/nodejs.svg',
 }
