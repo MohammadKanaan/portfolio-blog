@@ -1,0 +1,17 @@
+---
+title: How To Solve "Docker ports are unavailable"
+date: '2025-02-07'
+tags: ['docker']
+draft: false
+summary: A quick solution to solve the error "Docker ports are unavailable" in Windows.
+---
+
+This issue is caused by windows allocating ports without unallocating them. That leaves us with "occupied" ports which should be available. The following command will force the WinNat service to restart and effectively clearing the cache.
+
+Run the following command in Powershell
+
+```Powershell
+net stop winnat
+```
+
+That's it, you should be good to go.

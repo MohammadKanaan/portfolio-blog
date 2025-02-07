@@ -97,7 +97,7 @@ export default function ListLayoutWithTags({
         </div>
         <div className="flex sm:space-x-24">
           <div className="hidden sm:block">
-            <ScrollArea className="sticky top-10 h-[calc(100vh-8rem)] w-64 overflow-auto rounded-md border bg-gray-50 pt-2 shadow-md dark:border-gray-800 dark:bg-gray-900/70 dark:shadow-gray-800/40">
+            <ScrollArea className="sticky top-10 h-fit max-h-[calc(100vh-8rem)] w-64 overflow-auto rounded-md border bg-gray-50 pt-2 shadow-md dark:border-gray-800 dark:bg-gray-900/70 dark:shadow-gray-800/40">
               <div className="px-6 py-4">
                 {pathname.startsWith('/blog') ? (
                   <h3 className="font-bold uppercase text-primary-500">All Posts</h3>

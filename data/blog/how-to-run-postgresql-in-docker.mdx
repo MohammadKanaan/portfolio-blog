@@ -1,0 +1,63 @@
+---
+title: How To Run PostgreSQL In Docker
+date: '2025-02-07'
+tags: ['guide', 'database', 'postgresql', 'docker']
+draft: false
+summary: A guide on how to run a PostgreSQL container and connect it to your project. 
+---
+
+## Overview
+<TOCInline toc={props.toc} exclude="Overview" toHeading={3} />
+
+## Prerequisites
+
+You need to have [docker engine](https://docs.docker.com/engine/) installed. If you have the [Desktop App](https://docs.docker.com/get-started/get-docker/) for Windows or Linux you're good to go. 
+
+## Preparing The Files
+
+The docker compose file describes how an image is turned into a container. For this example I've chosen the **postgres:alpine** image as it saves space and memory. 
+
+The container will expose to us port **6500** from port **5432**, the latter being the default for a running database. 
+
+A volume will allow us to have persistence between runs.
+
+The container will take its credentials from the **.env** file located in the same directory. That's why it's important to place this file at the root of your application.
+
+Note: Make sure to change the container_name property if you're managing multiple databases to avoid naming conflicts.
+
+```yaml:docker-compose.yaml
+services:
+  postgres:
+    image: postgres:alpine
+    container_name: postgres
+    ports:
+      - '6500:5432'
+    volumes:
+      - progresDB:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+volumes:
+  progresDB:
+```
+
+The **.env** file should include the following enviroment variables: POSTGRES_HOST, POSTGRES_PORT, POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB. The **.env** file is usually located at the root of the application. Make sure to include it in the **.gitignore** file to avoid leaking sensitive information.
+
+```javascript:.env
+POSTGRES_HOST=127.0.0.1
+POSTGRES_PORT=6500
+POSTGRES_USER=[username]
+POSTGRES_PASSWORD=[password]
+POSTGRES_DB=[database_name]
+
+DATABASE_URL="postgresql://[username]:[password]@localhost:6500/[database_name]?schema=public"
+```
+
+## Running The Command
+
+Finally we will run the following command to create the container. `-d` is shorthand for `--detached` which will allow us to run the container in the background and still use the command line.
+
+```bash
+docker compose up -d
+```
+
+Thank you for reading this far. I hope this guide helps you. Docker and PostgreSQL hold a special place in my heart!
