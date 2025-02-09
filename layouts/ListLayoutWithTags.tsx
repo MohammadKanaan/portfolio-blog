@@ -25,6 +25,7 @@ interface ListLayoutProps {
 
 function Pagination({ totalPages, currentPage }: PaginationProps) {
   const pathname = usePathname()
+  if (!pathname) throw new Error('No pathname')
   const segments = pathname.split('/')
   const lastSegment = segments[segments.length - 1]
   const basePath = pathname
@@ -81,6 +82,7 @@ export default function ListLayoutWithTags({
   pagination,
 }: ListLayoutProps) {
   const pathname = usePathname()
+  if (!pathname) throw new Error('No pathname')
   const tagCounts = tagData as Record<string, number>
   const tagKeys = Object.keys(tagCounts)
   const sortedTags = tagKeys.sort((a, b) => tagCounts[b] - tagCounts[a])
@@ -99,16 +101,24 @@ export default function ListLayoutWithTags({
           <div className="hidden sm:block">
             <ScrollArea className="sticky top-10 h-fit max-h-[calc(100vh-8rem)] w-64 overflow-auto rounded-md border bg-gray-50 pt-2 shadow-md dark:border-gray-800 dark:bg-gray-900/70 dark:shadow-gray-800/40">
               <div className="px-6 py-4">
-                {pathname.startsWith('/blog') ? (
-                  <h3 className="font-bold uppercase text-primary-500">All Posts</h3>
-                ) : (
+                <div className="flex flex-row items-center justify-between">
+                  {pathname.startsWith('/blog') ? (
+                    <h3 className="font-bold uppercase text-primary-500">All Posts</h3>
+                  ) : (
+                    <Link
+                      href={`/blog`}
+                      className="font-bold uppercase text-gray-700 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-500"
+                    >
+                      All Posts
+                    </Link>
+                  )}
                   <Link
-                    href={`/blog`}
-                    className="font-bold uppercase text-gray-700 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-500"
+                    href="/tags"
+                    className="text-sm font-medium uppercase text-gray-500 hover:text-primary-500 dark:text-gray-300 dark:hover:text-primary-500"
                   >
-                    All Posts
+                    <span className="hidden sm:inline">View all tags</span>
                   </Link>
-                )}
+                </div>
                 <ul>
                   {sortedTags.map((t) => {
                     return (

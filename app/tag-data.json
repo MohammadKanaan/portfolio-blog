@@ -1,5 +1,5 @@
 {
-  "guide": 4,
+  "guide": 1,
   "database": 1,
   "postgresql": 1,
   "docker": 2,
@@ -7,8 +7,5 @@
   "pocketbase": 1,
   "react-native": 1,
   "markdown": 1,
-  "laravel": 1,
-  "next-js": 2,
-  "tailwind": 1,
-  "github": 1
+  "laravel": 1
 }

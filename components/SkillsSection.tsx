@@ -21,7 +21,7 @@ export default function SkillsSection() {
           <div className="flex flex-row flex-wrap gap-1" key={skillName}>
             <span className="text-lg font-semibold">{skillName}: </span>
             {skill.map((s) => (
-              <TechStackBadge tech={s} />
+              <TechStackBadge tech={s} key={s} />
             ))}
           </div>
         )
