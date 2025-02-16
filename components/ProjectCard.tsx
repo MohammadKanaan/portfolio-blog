@@ -42,7 +42,7 @@ export default function ProjectCard({ title, description, imgSrc, href, techStac
             )}
           </h2>
           <div className="flex flex-row flex-wrap gap-1">
-            {techStack?.map((tech) => <TechStackBadge tech={tech} />)}
+            {techStack?.map((tech) => <TechStackBadge key={tech} tech={tech} />)}
           </div>
           <p className="prose mb-3 max-w-none text-gray-500 dark:text-gray-400">{description}</p>
           {href && (
