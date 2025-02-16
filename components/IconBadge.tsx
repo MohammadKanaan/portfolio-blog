@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Badge, BadgeProps } from './ui/badge'
 import { cn } from 'lib/utils'
+import Image from 'next/image'
 
 interface IconBadgeProps extends BadgeProps {
   icon?: React.ReactElement
@@ -26,7 +27,7 @@ export default function IconBadge({
       className: cn('w-3 h-3', iconClassName),
     })
   ) : iconSrc ? (
-    <img src={iconSrc} className={cn('h-3 w-3', iconClassName)} alt="" />
+    <Image src={iconSrc} className={cn('h-3 w-3', iconClassName)} alt="" />
   ) : null
 
   return (
