@@ -3,8 +3,8 @@
   "database": 1,
   "postgresql": 1,
   "docker": 2,
-  "code": 2,
-  "pocketbase": 1,
-  "react-native": 1,
-  "laravel": 1
+  "code": 3,
+  "laravel": 1,
+  "pocketbase": 2,
+  "react-native": 1
 }
