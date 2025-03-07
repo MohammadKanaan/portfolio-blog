@@ -58,6 +58,18 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     images: [siteMetadata.socialBanner],
   },
+  icons: [
+    {
+      media: '(prefers-color-scheme: dark)',
+      url: '/static/icons/blog-dark.png',
+      href: '/static/icons/blog-dark.png',
+    },
+    {
+      media: '(prefers-color-scheme: light)',
+      url: '/static/icons/blog-light.png',
+      href: '/static/icons/blog-light.png',
+    },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

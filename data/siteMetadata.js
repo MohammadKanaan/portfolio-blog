@@ -3,7 +3,7 @@ const siteMetadata = {
   title: "Mohammad Kanaan's Blog",
   author: 'Mohammad Kanaan',
   headerTitle: 'Blog',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: 'A blog where I write about my journey through software development.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',

@@ -2,7 +2,7 @@
 title: Laravel
 date: '2023-03-08'
 tags: ['code', 'laravel']
-draft: false
+draft: true
 summary: My Laravel notes
 ---
 
@@ -11,19 +11,22 @@ summary: My Laravel notes
 <TOCInline toc={props.toc} exclude="Overview" toHeading={3} />
 
 # Courses
+
 - [Laracasts](https://laracasts.com)
-	- https://laracasts.com/series/30-days-to-learn-laravel-11
-	- https://laracasts.com/series/small-laravel-packages-big-impact
+  - https://laracasts.com/series/30-days-to-learn-laravel-11
+  - https://laracasts.com/series/small-laravel-packages-big-impact
 - Udemy
-	- https://www.udemy.com/course/laravel-beginner-fundamentals/?couponCode=ST18MT62524
+  - https://www.udemy.com/course/laravel-beginner-fundamentals/?couponCode=ST18MT62524
 
 use an IDE Helper
+
 ```BASH
 composer require --dev barryvdh/laravel-ide-helper
 ```
 
-PHPStorm issue with Model methods such as Model::find or Model::create 
+PHPStorm issue with Model methods such as Model::find or Model::create
 add this to the Model
+
 ```php
 use Illuminate\Database\Eloquent\Builder;
 /** @mixin Builder */
@@ -36,11 +39,13 @@ Laravel Sanctum postman login and session https://youtu.be/My61OicxPRo?si=S-Jk7D
 related: can't get csrf cookies cz it's a different domain since Herd gives a new domain
 
 alternative for `php artisan serve` if it's showing this error error: php artisan serve failed to listen reason ?
+
 ```BASH
 php -S localhost:8000 -t public
 ```
 
 ### How to fix issues with api routes not appearing in `php artisan routes:list`:
+
 ```PHP
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -50,15 +55,19 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
 ```
+
 and to circumvent in the future just use the artisan command instead of manually adding the api.php
+
 ```BASH
 php artisan install:api
 ```
 
 ### Create a Model, Migration and Controller in the same command
+
 ```BASH
 php artisan make:model Test -m -c -s --api
 ```
 
 ### Setup Laravel Breeze with Nextjs
+
 https://github.com/laravel/breeze-next
