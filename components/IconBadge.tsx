@@ -27,7 +27,7 @@ export default function IconBadge({
       className: cn('w-3 h-3', iconClassName),
     })
   ) : iconSrc ? (
-    <Image src={iconSrc} className={cn('h-3 w-3', iconClassName)} alt="" />
+    <Image width={12} height={12} src={iconSrc} className={cn('h-3 w-3', iconClassName)} alt="" />
   ) : null
 
   return (
